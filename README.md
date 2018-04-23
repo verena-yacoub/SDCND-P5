@@ -99,7 +99,7 @@ the figure below is the complete working pipeline
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-* In general, doing the balance between the scales and heatmap threshold needed many experiments, and though not avoiding all false positive prediction. 
+* In general, doing the balance between the scales and heatmap threshold needed many experiments, and though not avoiding all false positive prediction, and in order to avoid these in the submission heatmap threshold was set high to an extent of missing car when getting out of boxes' interference zone!  
 * This pipeline might fail when dramatically varying brightness level
 * As a way of improvment of quality, I guess changing the type of classifier, experimenting more with parameters, increasing the dataset for the classifier training (by augmentation or whole new images), or using history will do good, or else adding the color bins to the feature vector. 
 * Knowing that quality improvement might be computationally intensive, I tried an [experiment](https://github.com/verena-yacoub/SDCND-P5/blob/master/experiment/experiment.py#L186-L214) where I reduced the scales of searching while keeping the same classifier and parameters, Resulting video can be found [here](https://github.com/verena-yacoub/SDCND-P5/blob/master/experiment/experiment_video_output.mp4) which seems promising and might be improved by enhancing the classifier!   
