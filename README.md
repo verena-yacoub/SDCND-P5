@@ -61,7 +61,7 @@ A separate code was made [here](https://github.com/verena-yacoub/SDCND-P5/blob/m
 
 #### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
-The sliding window search is implemented over [here] and combining multiple sliding window search can be found [here]()   
+The sliding window search is implemented over [here](https://github.com/verena-yacoub/SDCND-P5/blob/master/vehicle_detection.py#L94-L120) and combining multiple sliding window search can be found [here](https://github.com/verena-yacoub/SDCND-P5/blob/master/vehicle_detection.py#L173-L226)   
 The main concept behind the scales chosen was that small cars are more likely in the top of the searching area while big sized cars can be captured in the bottom part of the image, so the start and end points are chosen accordingly 
   * another factor for choosing the end point in the Y axis is the scaling, as our original training image were 64x64 and that is the default sampling rate, it is important to have a suitable endpoint matching the searching scale, i.e. if the sclae is 3, the difference between the start and end points must be at least 3x64= 192.  
   
@@ -78,9 +78,10 @@ To visualize the sliding window search more: this image below shows the strips t
 #### 1. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
 * Positions of positive prediction are extracted by `nonzero` function  
-* Then heatmap was constructed 
+* Then heatmap was [constructed](https://github.com/verena-yacoub/SDCND-P5/blob/master/vehicle_detection.py#L126-L140) 
 * Threshold was then set to 3 (as I used many scales Threshold must be high, as the heatmap is representing roughly the number of positive prediction in this area, so when the value of heatmap is 4 for example, this means that 4 boxes gave positive signal and so on)
-* Another step of filtering is ignoring the thin bounding boxes which was implemented [here]()
+* Labels and boxes were [drawn](https://github.com/verena-yacoub/SDCND-P5/blob/master/vehicle_detection.py#L143-L158) 
+* Another step of filtering is ignoring the thin bounding boxes which was implemented [here](https://github.com/verena-yacoub/SDCND-P5/blob/master/vehicle_detection.py#L154)
 
 
 ## Working pipeline  
