@@ -65,7 +65,7 @@ The sliding window search is implemented over [here] and combining multiple slid
 The main concept behind the scales chosen was that small cars are more likely in the top of the searching area while big sized cars can be captured in the bottom part of the image, so the start and end points are chosen accordingly 
   * another factor for choosing the end point in the Y axis is the scaling, as our original training image were 64x64 and that is the default sampling rate, it is important to have a suitable endpoint matching the searching scale, i.e. if the sclae is 3, the difference between the start and end points must be at least 3x64= 192.  
   
-To visualize the sliding window search more: this image below shows the strips taken from the each image with the different scales, the image is also shoeing the Hog feature of each corresponding Y, U, V channels. 
+To visualize the sliding window search more: this image below shows the strips taken from the each image with the different scales, the figure is also shoeing the Hog feature of each  Y, U, V channel respectively beside. 
 
 ![alt text][image3]
 
@@ -81,6 +81,12 @@ To visualize the sliding window search more: this image below shows the strips t
 * Then heatmap was constructed 
 * Threshold was then set to 3 (as I used many scales Threshold must be high, as the heatmap is representing roughly the number of positive prediction in this area, so when the value of heatmap is 4 for example, this means that 4 boxes gave positive signal and so on)
 * Another step of filtering is ignoring the thin bounding boxes which was implemented [here]()
+
+
+## Working pipeline  
+the figure below is the complete working pipeline 
+
+![alt text][image2]
 
 ---
 ### Video Implementation  
