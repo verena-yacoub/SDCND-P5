@@ -43,8 +43,8 @@ Channels= ALL
 
 In the following table all classifiers tried are grouped with their validation accuracy and comments 
 
-|Color space| 	Channels |	Pixels per cell|	Cells per block|	Accuracy|
-|:----------:|:-----------:|:--------------:|:--------------:|:---------|
+|Color space| 	Channels | HOG orientations|	Pixels per cell|	Cells per block|	Accuracy|
+|:----------:|:-----------:|:--------------:|:--------------:|:---------|:---------:|
 |HLS|	All|	11	|8	|2|	97.7%|
 |HSV|	All|	11|	8	|2	|98.09%|
 |YUV|	All|	11|	8|	2|	98.06%|
