@@ -80,8 +80,8 @@ To visualize the sliding window search more: this image below shows the strips t
 
 ---
 ### Video Implementation  
+[Here] is the link for the final video output!
 
-[Here]() you can find the final video output!
 ---
 
 ### Discussion
