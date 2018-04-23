@@ -57,47 +57,37 @@ In the following table all classifiers tried are grouped with their validation a
 
 A separate code was made [here]() to train and build SVM classifier model the this model is used in the main code. 
 * In the code, the steps of classifier training and parameter tuning can be found [here]() 
-* Note for normalization: in [this function]() the default normalizer used by 'skimage' library is the L1 normalizer  
+* Note for normalization: in [this function]() the default normalizer used by `skimage` library is the [L1-norm](http://scikit-image.org/docs/dev/api/skimage.feature.html#skimage.feature.hog)  
 
 
 ### Sliding Window Search
 
 #### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
-I decided to search random window positions at random scales all over the image and came up with this (ok just kidding I didn't actually ;):
+The sliding window search is implemented over [here] and combining multiple sliding window search can be found [here]()   
+The main concept behind the scales chosen was that small cars are more likely in the top of the searching area while big sized cars can be captured in the bottom part of the image, so the start and end points are chosen accordingly 
+  * another factor for choosing the end point in the Y axis is the scaling, as our original training image were 64x64 we are extracting...  
+To visualize the sliding window search more: this image below shows the strips taken from the each image with the different scales, the image is also shoeing the Hog feature of each corresponding Y, U, V channels. 
 
 ![alt text][image3]
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
-Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
+Ultimately I searched on seven scales using YUV with orientations 11 and pixels per cells of 8. 
+ * Noting that while training the classifier, the [default](http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html) penalty and loss parameters are kept, so, there was no special optimization for classifier training 
+
+## Heat-map and filtering  
+#### 1. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
+
+I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions.  I then used `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap.  I then assumed each blob corresponded to a vehicle.  I constructed bounding boxes to cover the area of each blob detected. 
+
+
 
 
 ---
 
 ### Video Implementation
-
-#### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
-Here's a 
-
-
-#### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
-
-I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions.  I then used `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap.  I then assumed each blob corresponded to a vehicle.  I constructed bounding boxes to cover the area of each blob detected.  
-
-Here's an example result showing the heatmap from a series of frames of video, the result of `scipy.ndimage.measurements.label()` and the bounding boxes then overlaid on the last frame of video:
-
-### Here are six frames and their corresponding heatmaps:
-
-
-
-### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap from all six frames:
-
-
-### Here the resulting bounding boxes are drawn onto the last frame in the series:
-
-
-
+[Here]() you can find the final video output!
 
 ---
 
