@@ -108,6 +108,7 @@ the figure below is the complete working pipeline
 * search scales were [reduced](https://github.com/verena-yacoub/SDCND-P5/blob/master/vehicle_detection_resubmission.py#L202-L220) to 4 while keeping the same classifier and parameters
 * History was [considered](https://github.com/verena-yacoub/SDCND-P5/blob/master/vehicle_detection_resubmission.py#L177_L187)
 * [Here](https://github.com/verena-yacoub/SDCND-P5/blob/master/project_output_video_resubmission.mp4) is the resulting video
+* an outlier is detected around the second 42, working on eliminating it  
 ### References  
 * Udacity classroom 
 * https://github.com/jeremy-shannon/CarND-Vehicle-Detection/blob/master/vehicle_detection_project.ipynb
