@@ -79,7 +79,8 @@ To visualize the sliding window search more: this image below shows the strips t
 * Another step of filtering is ignoring the thin bounding boxes which was implemented [here]()
 
 ---
-### Video Implementation
+### Video Implementation  
+
 [Here]() you can find the final video output!
 ---
 
