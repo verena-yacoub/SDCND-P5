@@ -27,21 +27,31 @@ The goals / steps of this project are the following:
 ### Histogram of Oriented Gradients (HOG)
 
 #### 1. Explain how (and identify where in your code) you extracted HOG features from the training images.
-
-The code for this step is contained in the first code cell of the IPython notebook (or in lines # through # of the file called `some_file.py`).  
-
-I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
-
+* training images were first read and loaded 
+* HOG features were extracted using `skimage.hog()` function and different parameters were explored 
+Below, is an example image of HOG feature extraction from a car and a noncar image, where the parameters are:
+orientation=11
+Pixels per cell=8
+Cells per bloack =2 
+Colorspace= YUV
+Channels= ALL
 ![alt text][image1]
 
-I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
-
-Here is an example using the `YCrCb` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
 
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
-I tried various combinations of parameters and...
+In the following table all classifiers tried are grouped with their validation accuracy and comments 
+
+|Color space| 	Channels |	Pixels per cell|	Cells per block|	Accuracy|
+|:----------:|:-----------:|:--------------:|:--------------:|:---------|
+|HLS|	All|	11	|8	|2|	97.7%|
+|HSV|	All|	11|	8	|2	|98.09%|
+|YUV|	All|	11|	8|	2|	98.06%|
+|YUV|	All|	11|	16|	2|	98%|
+|YUV|	ALL|	9	|16|	2|	97.61%|
+|YUV|	All|	9	|8	|2|	98.09%|
+
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
