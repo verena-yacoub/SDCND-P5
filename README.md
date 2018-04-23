@@ -17,10 +17,7 @@ The goals / steps of this project are the following:
 
 
 ## Rubric Points Discussion  
-
 ---
-### Writeup / README
-
 ### Histogram of Oriented Gradients (HOG)
 
 #### 1. Explain how (and identify where in your code) you extracted HOG features from the training images.
@@ -31,14 +28,14 @@ orientation=11
 Pixels per cell=8  
 Cells per bloack =2   
 Colorspace= YUV  
-Channels= ALL
+Channels= ALL  
 ![alt text][image1]
 
 
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
-In the following table all classifiers tried are grouped with their validation accuracy and comments 
+In the following table all classifiers tried are grouped with their prediction accuracy
 
 |Color space| 	Channels | HOG orientations|	Pixels per cell|	Cells per block|	Accuracy|
 |:----------:|:-----------:|:--------------:|:--------------:|:---------|:---------:|
@@ -70,26 +67,27 @@ To visualize the sliding window search more: this image below shows the strips t
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
-Ultimately I searched on seven scales using YUV with orientations 11 and pixels per cells of 8. 
+* Ultimately I searched on ten scales using YUV with orientations 11 and pixels per cells of 8. 
  * Noting that while training the classifier, the [default](http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html) penalty and loss parameters are kept, so, there was no special optimization for classifier training 
 
 ## Heat-map and filtering  
 #### 1. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
-I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions.  I then used `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap.  I then assumed each blob corresponded to a vehicle.  I constructed bounding boxes to cover the area of each blob detected. 
-
-
-
+* Positions of positive prediction are extracted by `nonzero` function  
+* Then heatmap was constructed 
+* Threshold was then set to 3 (as I used many scales Threshold must be high, as the heatmap is representing roughly the number of positive prediction in this area, so when the value of heatmap is 4 for example, this means that 4 boxes gave positive signal and so on)
+* Another step of filtering is ignoring the thin bounding boxes which was implemented [here]()
 
 ---
-
 ### Video Implementation
 [Here]() you can find the final video output!
-
 ---
 
 ### Discussion
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+* In general, doing the balance between the scales and heatmap threshold needed many experiments, and though not avoiding all false positive prediction. 
+* This pipeline might fail when dramatically varying brightness level
+* As a way of improvment of quality, I guess changing the type of classifier, experimenting more with parameters, increasing the dataset for the classifier training (by augmentation or whole new images) will do good, or else adding the color bins to the feature vector. 
+* Knowing that quality improvement might be computationally intensive, I tried an [experiment]() where I reduced the scales of searching while keeping the same classifier and parameters, Resulting video can be found [here]   
