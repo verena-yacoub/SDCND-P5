@@ -46,6 +46,9 @@ In the following table all classifiers tried are grouped with their prediction a
 |YUV|	ALL|	9	|16|	2|	97.61%|
 |YUV|	All|	9	|8	|2|	98.09%|
 
+From experiments, all classifiers with ~ 97% accuracy are detecting more false positives and missing right spots. (YUV, ALL, 11, 8, 2) was chosen among other classifiers as it showed the most reasonable detection.  
+
+*[here](https://github.com/verena-yacoub/SDCND-P5/tree/master/classifiers-ToMb) is a folder containing all built classifier models mentioned above*
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
