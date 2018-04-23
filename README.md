@@ -29,11 +29,11 @@ The goals / steps of this project are the following:
 #### 1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 * training images were first read and loaded 
 * HOG features were extracted using `skimage.hog()` function and different parameters were explored 
-Below, is an example image of HOG feature extraction from a car and a noncar image, where the parameters are:
-orientation=11
-Pixels per cell=8
-Cells per bloack =2 
-Colorspace= YUV
+Below, is an example image of HOG feature extraction from a car and a noncar image, where the parameters are:_
+orientation=11_
+Pixels per cell=8_
+Cells per bloack =2_ 
+Colorspace= YUV_
 Channels= ALL
 ![alt text][image1]
 
