@@ -80,7 +80,7 @@ To visualize the sliding window search more: this image below shows the strips t
 
 ---
 ### Video Implementation  
-[Here] is the link for the final video output!
+[Here]() is the link for the final video output!
 
 ---
 
@@ -91,4 +91,4 @@ To visualize the sliding window search more: this image below shows the strips t
 * In general, doing the balance between the scales and heatmap threshold needed many experiments, and though not avoiding all false positive prediction. 
 * This pipeline might fail when dramatically varying brightness level
 * As a way of improvment of quality, I guess changing the type of classifier, experimenting more with parameters, increasing the dataset for the classifier training (by augmentation or whole new images) will do good, or else adding the color bins to the feature vector. 
-* Knowing that quality improvement might be computationally intensive, I tried an [experiment]() where I reduced the scales of searching while keeping the same classifier and parameters, Resulting video can be found [here]()   
+* Knowing that quality improvement might be computationally intensive, I tried an [experiment]() where I reduced the scales of searching while keeping the same classifier and parameters, Resulting video can be found [here]() which seems promising and might be improved by enhancing the classifier!   
