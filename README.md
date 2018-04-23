@@ -104,6 +104,10 @@ the figure below is the complete working pipeline
 * As a way of improvment of quality, I guess changing the type of classifier, experimenting more with parameters, increasing the dataset for the classifier training (by augmentation or whole new images), background cancellation, or using history will do good, or else adding the color bins to the feature vector. 
 * Knowing that quality improvement might be computationally intensive, I tried an [experiment](https://github.com/verena-yacoub/SDCND-P5/blob/master/experiment/experiment.py#L186-L214) where I reduced the scales of searching while keeping the same classifier and parameters, Resulting video can be found [here](https://github.com/verena-yacoub/SDCND-P5/blob/master/experiment/experiment_video_output.mp4) which seems promising and might be improved by enhancing the classifier!   
 ---
+### Notes for resubmission  
+* search scales were [reduced](https://github.com/verena-yacoub/SDCND-P5/blob/master/vehicle_detection_resubmission.py#L202-L220) to 4 while keeping the same classifier and parameters
+* History was [considered](https://github.com/verena-yacoub/SDCND-P5/blob/master/vehicle_detection_resubmission.py#L177_L187)
+* [Here](https://github.com/verena-yacoub/SDCND-P5/blob/master/project_output_video_resubmission.mp4) is the resulting video
 ### References  
 * Udacity classroom 
 * https://github.com/jeremy-shannon/CarND-Vehicle-Detection/blob/master/vehicle_detection_project.ipynb
