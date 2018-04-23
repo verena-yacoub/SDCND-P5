@@ -60,7 +60,8 @@ A separate code was made [here]() to train and build SVM classifier model the th
 
 The sliding window search is implemented over [here] and combining multiple sliding window search can be found [here]()   
 The main concept behind the scales chosen was that small cars are more likely in the top of the searching area while big sized cars can be captured in the bottom part of the image, so the start and end points are chosen accordingly 
-  * another factor for choosing the end point in the Y axis is the scaling, as our original training image were 64x64 and that is the default sampling rate, it is important to have a suitable endpoint matching the searching scale, i.e. if the sclae is 3, the difference between the start and end points must be at least 3x64= 192.
+  * another factor for choosing the end point in the Y axis is the scaling, as our original training image were 64x64 and that is the default sampling rate, it is important to have a suitable endpoint matching the searching scale, i.e. if the sclae is 3, the difference between the start and end points must be at least 3x64= 192.  
+  
 To visualize the sliding window search more: this image below shows the strips taken from the each image with the different scales, the image is also shoeing the Hog feature of each corresponding Y, U, V channels. 
 
 ![alt text][image3]
