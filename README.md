@@ -22,7 +22,7 @@ The goals / steps of this project are the following:
 
 #### 1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 * training images were first read and loaded 
-* HOG features were extracted using `skimage.feature.hog()` function and different parameters were explored 
+* HOG features were [extracted](https://github.com/verena-yacoub/SDCND-P5/blob/master/classifier_making.py#L39-L90) using `skimage.feature.hog()` function and different parameters were explored 
 Below, is an example image of HOG feature extraction from a car and a noncar image, where the parameters are:  
 orientation=11  
 Pixels per cell=8  
@@ -52,9 +52,9 @@ From experiments, all classifiers with ~ 97% accuracy are detecting more false p
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-A separate code was made [here]() to train and build SVM classifier model the this model is used in the main code. 
-* In the code, the steps of classifier training and parameter tuning can be found [here]() 
-* Note for normalization: in [this function]() the default normalizer used by `skimage` library is the [L1-norm](http://scikit-image.org/docs/dev/api/skimage.feature.html#skimage.feature.hog)  
+A separate code was made [here](https://github.com/verena-yacoub/SDCND-P5/blob/master/classifier_making.py) to train and build SVM classifier model the this model is used in the main code. 
+* In the code, the steps of classifier training and parameter tuning can be found [here](https://github.com/verena-yacoub/SDCND-P5/blob/master/classifier_making.py#L93-L142) 
+* Note for normalization: in [this function](https://github.com/verena-yacoub/SDCND-P5/blob/master/classifier_making.py#L125) the default normalizer used by `skimage` library is the [L1-norm](http://scikit-image.org/docs/dev/api/skimage.feature.html#skimage.feature.hog)  
 
 
 ### Sliding Window Search
