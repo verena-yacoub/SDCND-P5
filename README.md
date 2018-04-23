@@ -102,3 +102,8 @@ the figure below is the complete working pipeline
 * This pipeline might fail when dramatically varying brightness level
 * As a way of improvment of quality, I guess changing the type of classifier, experimenting more with parameters, increasing the dataset for the classifier training (by augmentation or whole new images) will do good, or else adding the color bins to the feature vector. 
 * Knowing that quality improvement might be computationally intensive, I tried an [experiment]() where I reduced the scales of searching while keeping the same classifier and parameters, Resulting video can be found [here]() which seems promising and might be improved by enhancing the classifier!   
+---
+### References  
+* Udacity classroom 
+* https://github.com/jeremy-shannon/CarND-Vehicle-Detection/blob/master/vehicle_detection_project.ipynb
+* https://github.com/abdelrahman-osama/CarND-Vehicle-Detection-P5/blob/master/Vehicle-Detection-P5.ipynb
