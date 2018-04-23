@@ -55,7 +55,10 @@ In the following table all classifiers tried are grouped with their validation a
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-I trained a linear SVM using...
+A separate code was made [here]() to train and build SVM classifier model the this model is used in the main code. 
+* In the code, the steps of classifier training and parameter tuning can be found [here]() 
+* Note for normalization: in [this function]() the default normalizer used by 'skimage' library is the L1 normalizer  
+
 
 ### Sliding Window Search
 
